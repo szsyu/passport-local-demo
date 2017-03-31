@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <%- include('./partials/stylesheet'); %>
+</head>
+
+<body>
+    <%- include('./partials/navigation'); %>
+    <div class="container">
+      <% if (message.length > 0) {%>
+        <div class="alert alert-warning">
+          <strong>Warning!</strong>
+          <%=message%>.
+        </div>
+        <% } %>
+          <form class="form-signin" action="/signup" method="post">
+            <h2 class="form-signin-heading">Sign Up</h2>
+            <div class="form-group">
+              <label for="inputName" class="sr-only">Name</label>
+              <input type="text" name="name" class="form-control" id="name" placeholder="Name" required="">
+            </div>
+            <div class="form-group">
+              <label for="inputEmail" class="sr-only">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" aria-describedby="emailHelp" required="">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword" class="sr-only">Password</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </form>
+    </div>
+    <%- include('./partials/footer'); %>
+    <%- include('./partials/javascript'); %>
+</body>
+
+</html>

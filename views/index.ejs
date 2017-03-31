@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <%- include('./partials/stylesheet'); %>
+</head>
+
+<body>
+  <%- include('./partials/navigation'); %>
+    <div class="container">
+      <div class="page-header">
+        <h1>
+          <%= title %>
+        </h1>
+        <p class="lead">Welcome to
+          <%= title %>
+        </p>
+      </div>
+    </div>
+    <%- include('./partials/footer'); %>
+    <%- include('./partials/javascript'); %>
+</body>
+
+</html>

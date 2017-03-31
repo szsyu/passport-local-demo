@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <%- include('./partials/stylesheet'); %>
+</head>
+
+<body>
+  <%- include('./partials/navigation'); %>
+    <div class="container">
+      <% if (message.length > 0) {%>
+        <div class="alert alert-warning" role="alert">
+          <strong><%=message%></strong>.
+        </div>
+        <% } %>
+          <form class="form-signin" action="/login" method="post">
+            <h2 class="form-signin-heading">Sign In</h2>
+            <div class="form-group">
+              <label for="inputEmail">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" aria-describedby="emailHelp" required="">
+            </div>
+            <div class="form-group">
+              <label for="inputPassword">Password</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="">
+            </div>
+            <p>Or <a href="/signup">Sign Up</a></p>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+    <%- include('./partials/footer'); %>
+    <%- include('./partials/javascript'); %>
+</body>
+
+</html>
